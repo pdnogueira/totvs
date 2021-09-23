@@ -31,14 +31,14 @@
                 <div class="col-12">
 
 
-                    <div class="box mb-4 d-none" *ngFor="let product of products | filter:data">
+                    <div class="box mb-4 " *ngFor="let product of products | filter:data">
                         <div class="d-flex justify-content-between box-header p-3">
                             <h2>{{product.title}}</h2>
                             <span class="expand" (click)="toggleTabs(product.id)">
-                                {{buttonName}}
+                             Visualizar 
                             </span>
                         </div>
-                        <div *ngIf="show" class=" box-container p-3" #id{{produc.id}}>
+                        <div *ngIf="showtabs == product.id" class=" box-container p-3">
                             <div class="row">
                                 <div class="col-12 col-lg-10 ">
                                     <p>

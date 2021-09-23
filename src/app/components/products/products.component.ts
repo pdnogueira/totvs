@@ -12,13 +12,9 @@ export class ProductsComponent implements OnInit {
 
   data!: string;
   closeResult: string = '';
+  showtabs: boolean = false;
   products: Product[] | undefined
-  
-
-  product: Product = {
-    title: "New Product",
-    text: "Lorem ipsum"
-  }
+  buttonName: string | undefined
 
   constructor(
     private productService: ProductService,
@@ -28,15 +24,20 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productService.listProducts().subscribe(response => {
       this.products = response;
+      console.log(this.products);
     });
 
   }
 
-  createProductEvent(): void {
-    this.productService.newProduct(this.product).subscribe(response => {
-      alert("Produto criado");
-    })
+  toggleTabs(content: any) {
+    this.showtabs = content;
   }
+
+  // createProductEvent(): void {
+  //   this.productService.newProduct(this.product).subscribe(response => {
+  //     alert("Produto criado");
+  //   })
+  // }
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
@@ -45,6 +46,7 @@ export class ProductsComponent implements OnInit {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
   }
+
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
