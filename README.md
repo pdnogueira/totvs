@@ -9,3 +9,6 @@ json-server --watch db.json
 
 ## 4 - iniciar o projeto (POWERSHELL)
 ng serve
+
+## 5 - abrir Branch master (se necessário)
+npm checkout master 
