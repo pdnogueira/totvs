@@ -1,0 +1,100 @@
+<div id="tot-header" class="container-fluid">
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="my-5 col-12">
+                    <div class="text-center">
+                        <img src="assets/logo/totvs-logo.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class=" py-5 col-12">
+                    <input type="text" class="form-control" name="data" [(ngModel)]="data">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+<div class="container-fluid">
+    <div id="results" class="container">
+        <!-- <div class="col-12 p-4 text-center">
+            <button class="btn btn-warning" (click)="createProductEvent()">New Product</button>
+        </div> -->
+
+        <div class="py-5">
+
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <h3>Resultado da busca</h3>
+                </div>
+                <div class="col-12">
+
+
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                This is the expansion title
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                This is a summary of the content
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p>This is the primary content of the panel.</p>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Self aware panel
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                            </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <p>I'm visible because I am open</p>
+                    </mat-expansion-panel>
+
+
+
+
+                    <!-- <div class="box mb-4 d-none" *ngFor="let product of products | filter:data">
+                        <div class="d-flex justify-content-between box-header p-3">
+                            <h2>{{product.title}}</h2>
+                            <span class="expand" (click)="toggleTabs(product.id)">
+                                {{buttonName}}
+                            </span>
+                        </div>
+                        <div *ngIf="show" class=" box-container p-3" #id{{produc.id}}>
+                            <div class="row">
+                                <div class="col-12 col-lg-10 ">
+                                    <p>
+                                        {{product.text}}
+                                    </p>
+                                </div>
+                                <div class=" col-12 col-lg-2 ">
+                                    <button class="btn btn-warning " style="width: 100%; " (click)="open(mymodal) "> Ver
+                                        mais</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #mymodal let-modal>
+    <div class="modal-header ">
+
+        <button type="button " class="close " aria-label="Close " (click)="modal.dismiss( 'Cross click') ">
+            <span aria-hidden="true ">×</span>
+        </button>
+    </div>
+    <div class="modal-body ">
+        Tem certeza que deseja ir para tabela?
+    </div>
+    <div class="modal-footer ">
+        <button type="button " class="btn btn-outline-dark " (click)="modal.close( 'Save click') ">Ok</button>
+    </div>
+</ng-template>

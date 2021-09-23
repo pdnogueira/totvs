@@ -1,0 +1,27 @@
+#tot-header {
+    background-color: blue;
+    input[type="text"] {
+        border-radius: 5px 0 0 5px;
+    }
+    .btn_search {
+        background-color: yellow;
+        border-radius: 0px 5px 5px 0;
+        &:hover {
+            cursor: pointer;
+            color: red;
+        }
+    }
+}
+
+#results {
+    .box {
+        border: solid 1px gray;
+        box-sizing: border-box;
+        .box-header {
+            border-bottom: 1px solid gray;
+        }
+        * {
+            align-items: center;
+        }
+    }
+}
